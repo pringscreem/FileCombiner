@@ -1,0 +1,21 @@
+This program should combine multiple C++ files into a single document.
+It should be executed from the command line with several arguments:
+The first argument should be either the "help" or "combine" command.
+The second argument should be the output file name.
+The rest of the arguments should be the names of the files to combine.
+If the first argument is "help", a description of how to use the program
+should be printed to the console.
+If the first argument is "combine", the program should execute the combining
+of the files and create a file with the name entered in the second argument.
+
+Example:
+./FileCombine combine myCombinedFile game.h game.cpp main.cpp
+
+The above command should copy the files "game.h", "game.cpp", and "main.cpp"
+into one file named "myCombinedFile.cpp".
+
+Second Example:
+./FileCombine help outputFile asdf.cpp qwerty.h qwerty.cpp main.cpp dvorak.cpp
+
+This second example should print out the instructions for using the program and 
+ignore all the other arguments after "help".
