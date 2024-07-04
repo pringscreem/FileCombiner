@@ -1,5 +1,20 @@
+#include <random>
 #include <iostream>
-#include "Game.h"
+
+class Game
+{
+    public:
+        Game(int min, int max);
+        void RunGuessingGame();
+    private:
+        int myMin;
+        int myMax;
+        int randomNumber = 0;
+        std::random_device rd;
+        std::mt19937 gen;
+        std::uniform_int_distribution<> distribution;
+};
+
 
 Game::Game(int min, int max)
 	:
@@ -16,7 +31,7 @@ void Game::RunGuessingGame()
     bool isCorrectGuess = false;
     int guess = 0;
 
-    while(!isCorrectGuess)
+   while(!isCorrectGuess)
     {
         std::cout << "Enter your guess between" << myMin << " and " << myMax << ": ";
         std::cin >> guess;
@@ -31,4 +46,12 @@ void Game::RunGuessingGame()
         }
     }
     std::cout << "End of game." << std::endl;
+}
+
+int main(int argc, char* argv[])
+{
+    Game game(1, 5);
+
+    game.RunGuessingGame();
+    return 0;
 }

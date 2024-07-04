@@ -3,11 +3,13 @@
 class Game
 {
     public:
-        Game();
+        Game(int min, int max);
         void RunGuessingGame();
     private:
+        int myMin;
+        int myMax;
         int randomNumber = 0;
         std::random_device rd;
-        std::mt19937 gen(rd());
-        std::uniform_int_distribution<> distribution(min, max);
+        std::mt19937 gen;
+        std::uniform_int_distribution<> distribution;
 };
