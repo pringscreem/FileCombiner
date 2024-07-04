@@ -5,9 +5,9 @@
 int main(int argc, char* argv[])
 {
 
-    std::ofstream outputFile;
-    std::string outputFilename = argv[3] + ".cpp"; //Check if "3" is the correct number.
-                                                   //We want the second argument given by the user.
+    //std::ofstream outputFile;
+    std::string outputFilename = static_cast<std::string>(argv[2]) + ".cpp"; //argv[2] should be the output name (second argument given)
+    //std::cout << "The outputFilename is " << outputFilename << std::endl;
     outputFile.open();
     //We need to get the argv and append the file extension to it (".cpp").
     //The argv might have to be cast to a string.
