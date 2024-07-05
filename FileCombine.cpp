@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
          int count = 0;
          while(std::getline(inputFile, outputString))
          {
-            outputFile << outputString;
+            outputFile << outputString << '\n';
             std::cout << "Line " << count << " added to " << outputFilename << std::endl;
             count++;
          }

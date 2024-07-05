@@ -1,3 +1,4 @@
 July 5, 2024
     -Updating MSYS2 to try to get g++ (the C++ compiler) working.
     -Success: g++ working (produced compile error).
+    -Basic version working (everything on one line).
