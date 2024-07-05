@@ -31,6 +31,7 @@ int main(int argc, char* argv[])
             count++;
          }
         //  outputFile << inputFile; //Incorrect... We have to use getline instead (and go through a loop)
+
     }
 
     outputFile.close();
