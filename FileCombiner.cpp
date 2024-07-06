@@ -1,3 +1,4 @@
+#include "FileCombiner.h"
 #include <iostream>
 #include <fstream>
 
