@@ -8,4 +8,4 @@ class FileCombiner
 
     private:
         //
-}
+};

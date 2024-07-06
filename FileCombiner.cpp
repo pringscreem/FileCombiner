@@ -1,9 +1,12 @@
 #include <iostream>
 #include <fstream>
 
-FileCombiner::FileCombiner(){}
+FileCombiner::FileCombiner()
+{
+    //
+}
 
-FileCombiner::void Run()
+void FileCombiner::Run()
 {
 
     //std::ofstream outputFile;
