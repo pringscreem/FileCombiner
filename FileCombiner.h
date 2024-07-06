@@ -5,7 +5,7 @@ class FileCombiner
 {
     public:
         FileCombiner();
-        void Run();
+        void Run(int argc, char* argv[]);
 
     private:
         //

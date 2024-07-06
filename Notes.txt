@@ -5,5 +5,7 @@ July 4, 2024
     -Working, except the class includes need to be removed from the combined file (the header includes).
 
 July 5, 2024
-    -Continue
-    
+    -Started writing a class.
+    -Remember to do all of the basics (boilerplate) for setting up a class (i.e. include header file, semicolon 
+     after class declaration).
+    -"#pragma once" is only used in header files (specifically designed for them).

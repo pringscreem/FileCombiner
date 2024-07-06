@@ -7,7 +7,7 @@ FileCombiner::FileCombiner()
     //
 }
 
-void FileCombiner::Run()
+void FileCombiner::Run(int argc, char* argv[])
 {
 
     //std::ofstream outputFile;
