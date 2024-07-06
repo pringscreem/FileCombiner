@@ -9,3 +9,5 @@ July 5, 2024
     -Remember to do all of the basics (boilerplate) for setting up a class (i.e. include header file, semicolon 
      after class declaration).
     -"#pragma once" is only used in header files (specifically designed for them).
+    -The argv variable might have to be accessed differently because it is a pointer.  Something isn't right with 
+     the way that I was using it.
