@@ -4,9 +4,10 @@
 class FileCombiner
 {
     public:
-        FileCombiner();
-        void Run(int argc, char* argv[]);
+        FileCombiner(int argcIn, char** argvIn);
+        void Run(int argc, char** argv);
 
     private:
-        //
+        int argc = 0;
+        char** argv = nullptr;
 };

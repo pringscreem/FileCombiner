@@ -2,12 +2,13 @@
 #include <iostream>
 #include <fstream>
 
-FileCombiner::FileCombiner()
+FileCombiner::FileCombiner(int argcIn, char** argvIn)
 {
-    //
+    argc = argcIn;
+    argv = argvIn;
 }
 
-void FileCombiner::Run(int argc, char* argv[])
+void FileCombiner::Run(int argc, char** argv)
 {
 
     //std::ofstream outputFile;
