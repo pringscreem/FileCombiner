@@ -13,4 +13,6 @@ July 5, 2024
      the way that I was using it.
 
 July 6, 2024
-    -Continue
+    -Help() function to print the instructions.
+    -Right now, just combine files into a single output file.  This can be expanded later to remove the includes of 
+     included classes (Is the original C++ version, i.e. the linker, doing this recursively (would explain a lot)?).
