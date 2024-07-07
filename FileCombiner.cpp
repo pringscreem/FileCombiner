@@ -10,15 +10,14 @@ FileCombiner::FileCombiner(int argcIn, char** argvIn)
 
 void FileCOmbiner::Help()
 {
-    std::cout << "This program combines multiple C++ files into a single document.\n";
-    std::cout << "It is executed from the command line with several arguments:";
-    std::cout << "The first argument should be either the \"help\" or \"combine\" command.";
-    std::cout << "The second argument should be the output file name.";
-    std::cout << "The rest of the arguments should be the names of the files to combine.";
-    std::cout << "If the first argument is \"help\", a description of how to use the program";
-    std::cout << "should be printed to the console.";
-    std::cout << "If the first argument is \"combine\", the program should execute the combining";
-    std::cout << "of the files and create a file with the name entered in the second argument.";
+    std::cout << "This program combines multiple files into a single document.\n";
+    std::cout << "It is executed from the command line with several arguments:\n";
+    std::cout << "The first argument must be either the \"help\" or \"combine\" command.\n";
+    std::cout << "The \"help\" command prints this help menu.\n";
+    std::cout << "The \"combine\" command executes the file combining operation with the designated files.\n"
+    std::cout << "The second argument must be the output file name.\n";
+    std::cout << "The rest of the arguments must be the names of the files to combine.\n";
+    std::cout << "of the files and create a file with the name entered in the second argument.\n";
 }
 
 void FileCombiner::Run(int argc, char** argv)
