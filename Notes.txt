@@ -6,7 +6,7 @@ July 4, 2024
 
 July 5, 2024
     -Started writing a class.
-    -Remember to do all of the basics (boilerplate) for setting up a class (i.e. include header file, semicolon 
+    -Remember to do all of the basics (boilerplate) for setting up a class (i.e. include header file, semi-colon 
      after class declaration).
     -"#pragma once" is only used in header files (specifically designed for them).
     -The argv variable might have to be accessed differently because it is a pointer.  Something isn't right with 
