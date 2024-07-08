@@ -40,7 +40,6 @@ void FileCombiner::Run(int argc, char** argv)
             std::cout << "Line " << count << " added to " << outputFilename << std::endl;
             count++;
          }
-        //  outputFile << inputFile; //Incorrect... We have to use getline instead (and go through a loo
     
     outputFile.close();
 }
