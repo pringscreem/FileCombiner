@@ -16,3 +16,10 @@ July 6, 2024
     -Help() function to print the instructions.
     -Right now, just combine files into a single output file.  This can be expanded later to remove the includes of 
      included classes (Is the original C++ version, i.e. the linker, doing this recursively (would explain a lot)?).
+
+July 7, 2024
+    -Testing to make sure it works in the MSYS2 (mingw) folder.
+    -Rename Main.cpp to TestGame.cpp (makes more sense).
+    -Chat-GPT has excellent answers to related C++ questions so far.  Some of them require thorough reading to see 
+     why they are good.
+    

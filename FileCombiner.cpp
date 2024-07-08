@@ -25,14 +25,15 @@ void FileCombiner::Help()
 void FileCombiner::Run(int argc, char** argv)
 {
     std::ofstream outputFile;
-    std::string outputFilename = static_cast<std::string>(argv[2]) + ".cpp"; //argv[2] should be the output name (second argument given)
+    std::string outputFilename(argv[2]);//= static_cast<std::string>(argv[2]) + ".cpp"; //argv[2] should be the output name (second argument given)
+                                 //static_cast can't call constructors, and converting from a C-Style String to a STD::String is done with a constructor.
     std::cout << "The outputFilename is " << outputFilename << std::endl;
     // outputFile.open(outputFilename, std::ios_base::app); //Open the string held in outputFilename ("argv[2].cpp") in append mode.
 
     for(int i = 2; i < argc; i++)
     {
          std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
-         std::ifstream inputFile;
+         std::ifstream inputFile;s
          inputFile.open(static_cast<std::string>(argv[i]));
          std::string outputString;
          int count = 0;
