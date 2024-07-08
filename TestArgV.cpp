@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 /**
  * Example Output (from https://www.onlinegdb.com/online_c++_compiler):
 * argc: 5
-* argv[0]: ./a.out
+* argv[0]: ./a.out //"a.out" is the default filename.
 * argv[1]: asdf
 * argv[2]: qwerty
 * argv[3]: dvorak

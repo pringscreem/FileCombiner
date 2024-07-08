@@ -26,7 +26,7 @@ void FileCombiner::Run(int argc, char** argv)
 {
     std::ofstream outputFile;
     std::string outputFilename = static_cast<std::string>(argv[2]) + ".cpp"; //argv[2] should be the output name (second argument given)
-    //std::cout << "The outputFilename is " << outputFilename << std::endl;
+    std::cout << "The outputFilename is " << outputFilename << std::endl;
     // outputFile.open(outputFilename, std::ios_base::app); //Open the string held in outputFilename ("argv[2].cpp") in append mode.
 
     for(int i = 2; i < argc; i++)
