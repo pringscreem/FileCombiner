@@ -42,4 +42,5 @@ void FileCombiner::Run(int argc, char** argv)
          }
     
     outputFile.close();
+    }
 }
