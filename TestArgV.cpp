@@ -25,3 +25,11 @@ int main(int argc, char* argv[])
 * argv[3]: dvorak
 * argv[4]: 123
  */
+
+
+// $ ./TestArgv asdf qwerty dvorak
+// argc: 4
+// argv[0]: C:\msys64\home\sonnl\FileCombiner\TestArgv.exe
+// argv[1]: asdf
+// argv[2]: qwerty
+// argv[3]: dvorak
