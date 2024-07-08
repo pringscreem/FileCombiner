@@ -8,13 +8,13 @@ FileCombiner::FileCombiner(int argcIn, char** argvIn)
     argv = argvIn;
 }
 
-void FileCOmbiner::Help()
+void FileCombiner::Help()
 {
     std::cout << "This program combines multiple files into a single document.\n";
     std::cout << "It is executed from the command line with several arguments:\n";
     std::cout << "The first argument must be either the \"help\" or \"combine\" command.\n";
     std::cout << "The \"help\" command prints this help menu.\n";
-    std::cout << "The \"combine\" command executes the file combining operation with the designated files.\n"
+    std::cout << "The \"combine\" command executes the file combining operation with the designated files.\n";
     std::cout << "The second argument must be the output file name.\n";
     std::cout << "The rest of the arguments must be the names of the files to combine.\n";
     std::cout << "of the files and create a file with the name entered in the second argument.\n";
@@ -23,28 +23,28 @@ void FileCOmbiner::Help()
 void FileCombiner::Run(int argc, char** argv)
 {
 
-    //std::ofstream outputFile;
-    std::string outputFilename = static_cast<std::string>(argv[2]) + ".cpp"; //argv[2] should be the output name (second argument given)
-    //std::cout << "The outputFilename is " << outputFilename << std::endl;
-    std::ofstream outputFile;
-    outputFile.open(outputFilename, std::ios_base::app); //Open the string held in outputFilename ("argv[2].cpp") in append mode.
+    // //std::ofstream outputFile;
+    // std::string outputFilename = static_cast<std::string>(argv[2]) + ".cpp"; //argv[2] should be the output name (second argument given)
+    // //std::cout << "The outputFilename is " << outputFilename << std::endl;
+    // std::ofstream outputFile;
+    // outputFile.open(outputFilename, std::ios_base::app); //Open the string held in outputFilename ("argv[2].cpp") in append mode.
 
-    for(int i = 2; i < argc; i++)
-    {
-         std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
-         std::ifstream inputFile;
-         inputFile.open(static_cast<std::string>(argv[i]));
-         std::string outputString;
-         int count = 0;
-         while(std::getline(inputFile, outputString))
-         {
-            outputFile << outputString << '\n';
-            std::cout << "Line " << count << " added to " << outputFilename << std::endl;
-            count++;
-         }
-        //  outputFile << inputFile; //Incorrect... We have to use getline instead (and go through a loop)
+    // for(int i = 2; i < argc; i++)
+    // {
+    //      std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
+    //      std::ifstream inputFile;
+    //      inputFile.open(static_cast<std::string>(argv[i]));
+    //      std::string outputString;
+    //      int count = 0;
+    //      while(std::getline(inputFile, outputString))
+    //      {
+    //         outputFile << outputString << '\n';
+    //         std::cout << "Line " << count << " added to " << outputFilename << std::endl;
+    //         count++;
+    //      }
+    //     //  outputFile << inputFile; //Incorrect... We have to use getline instead (and go through a loop)
 
-    }
+    // }
 
-    outputFile.close();
+    // outputFile.close();
 }
