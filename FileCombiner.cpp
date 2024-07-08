@@ -20,6 +20,8 @@ void FileCombiner::Help()
     std::cout << "of the files and create a file with the name entered in the second argument.\n";
 }
 
+
+//Probably working, returning an error on this computer (not using makefiles or CMake yet).
 void FileCombiner::Run(int argc, char** argv)
 {
     std::ofstream outputFile;
