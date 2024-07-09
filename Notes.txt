@@ -37,3 +37,6 @@ July 8, 2024
      necessary to search the whole document, regular expressions would be useful (although you 
      could search using getline again if everything is assumed to be on its' own line).
     -Not clear what is going wrong with the check to skip the include class line.
+
+July 9, 2024
+    -Continue
