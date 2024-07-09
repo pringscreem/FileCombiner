@@ -33,4 +33,6 @@ July 8, 2024
     -Chat-GPT found errors quickly.  Again, these errors seemed like they could have been caught 
      by proofreading and making sure the code is actually doing everything that it is supposed to do.
     -The next step is to create a function to remove the class name includes from the file.
-    -In 
+    -It is possible to do this by checking the string of each getline() call, but if it was 
+     necessary to search the whole document, regular expressions would be useful (although you 
+     could search using getline again if everything is assumed to be on its' own line).
