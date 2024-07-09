@@ -53,7 +53,7 @@ void FileCombiner::Run(int argc, char** argv)
              //   count++;
              //}
 
-             if(outputString.find("#include \"Game.h\"") != std::string::npos)
+             if(outputString.find("#include \"Game.h\"") == std::string::npos)
              {
                  outputFile << outputString << '\n';
                  std::cout << "Line " << count << " added to " << outputFilename << std::endl;
@@ -62,6 +62,7 @@ void FileCombiner::Run(int argc, char** argv)
              else
              {
                  std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
+                 count++;
              }
          }
          inputFile.close();
