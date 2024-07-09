@@ -44,7 +44,6 @@ void FileCombiner::Run(int argc, char** argv)
             std::cout << "Line " << count << " added to " << outputFilename << std::endl;
             count++;
          }
-    
-    outputFile.close();
     }
+    outputFile.close();
 }
