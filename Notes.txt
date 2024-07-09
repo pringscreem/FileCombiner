@@ -39,4 +39,8 @@ July 8, 2024
     -Not clear what is going wrong with the check to skip the include class line.
 
 July 9, 2024
-    -Continue
+    -The problem seems to be that the check is happening for the current inputFileName, which means 
+     that it is only checking for the correct "#include" in the header file in question itself.
+     If there were an "#include "Game.h"" in the Game.h file itself, it would remove this. 
+     As it is, in the Game.cpp file, it is checking for "#include "Game.cpp"". 
+     The solution is to loop through all the filenames and check for them.
