@@ -34,7 +34,8 @@ void FileCombiner::Run(int argc, char** argv)
     {
          std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
          std::ifstream inputFile;
-         inputFile.open(static_cast<std::string>(argv[i]));
+         std::string inputFileName(argv[i]);
+         inputFile.open(inputFileName);
          std::string outputString;
          int count = 0;
          while(std::getline(inputFile, outputString))
