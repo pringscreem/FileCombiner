@@ -40,6 +40,10 @@ void FileCombiner::Run(int argc, char** argv)
          int count = 0;
          while(std::getline(inputFile, outputString))
          {
+             if(outputString == inputFileName)
+             {
+                 continue;
+             }
             outputFile << outputString << '\n';
             std::cout << "Line " << count << " added to " << outputFilename << std::endl;
             count++;
