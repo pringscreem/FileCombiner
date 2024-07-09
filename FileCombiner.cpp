@@ -42,13 +42,27 @@ void FileCombiner::Run(int argc, char** argv)
          int count = 0;
          while(std::getline(inputFile, outputString))
          {
-             if(outputString.find( "#include \"" + inputFileName + "\"") != std::string::npos)
+             //if(outputString.find( "#include \"" + inputFileName + "\"") == std::string::npos)
+             //{
+             //    continue;
+             //}
+             //else
+             //{
+             //   outputFile << outputString << '\n';
+             //   std::cout << "Line " << count << " added to " << outputFilename << std::endl;
+             //   count++;
+             //}
+
+             if(outputString.find("#include \"Game.h\"") != std::string::npos)
              {
-                 continue;
+                 outputFile << outputString << '\n';
+                 std::cout << "Line " << count << " added to " << outputFilename << std::endl;
+                 count++;
              }
-            outputFile << outputString << '\n';
-            std::cout << "Line " << count << " added to " << outputFilename << std::endl;
-            count++;
+             else
+             {
+                 std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
+             }
          }
          inputFile.close();
     }
