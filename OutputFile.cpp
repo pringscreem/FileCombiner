@@ -14,7 +14,7 @@ class Game
         std::uniform_int_distribution<> distribution;
 };
 #include <iostream>
-
+#include "Game.h"
 
 Game::Game(int min, int max)
 	:
@@ -48,7 +48,7 @@ void Game::RunGuessingGame()
     std::cout << "End of game." << std::endl;
 }
 #include <iostream>
-
+#include "Game.h"
 
 int main(int argc, char* argv[])
 {

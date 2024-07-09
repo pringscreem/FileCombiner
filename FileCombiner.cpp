@@ -29,8 +29,9 @@ void FileCombiner::Run(int argc, char** argv)
                                  //static_cast can't call constructors, and converting from a C-Style String to a STD::String is done with a constructor.
     std::cout << "The outputFilename is " << outputFilename << std::endl;
     outputFile.open(outputFilename, std::ios_base::app); //Open the string held in outputFilename ("argv[2].cpp") in append mode.
-
-    for(int i = 2; i < argc; i++)
+                                                         //We might want the regular output mode, std::ios_base::out 
+                                                         //(this will make a file if it doesn't exist, whereas append mode will not).
+    for(int i = 3; i < argc; i++) //The first three arguments are the path, the command, and the output file.
     {
          std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
          std::ifstream inputFile;
@@ -40,7 +41,7 @@ void FileCombiner::Run(int argc, char** argv)
          int count = 0;
          while(std::getline(inputFile, outputString))
          {
-             if(outputString == inputFileName)
+             if(outputString == "#include \"" + inputFileName + "\"")
              {
                  continue;
              }

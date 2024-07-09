@@ -1,3 +1,4 @@
+//This program prints the name of each argument and its' position in the argv array to the console.
 #include <iostream>
 
 int main(int argc, char* argv[])
