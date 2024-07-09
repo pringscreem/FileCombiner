@@ -22,4 +22,9 @@ July 7, 2024
     -Rename Main.cpp to TestGame.cpp (makes more sense).
     -Chat-GPT has excellent answers to related C++ questions so far.  Some of them require thorough reading to see 
      why they are good.
-    
+   
+July 8, 2024
+    -Switch to home setup.
+    -Compile, test.
+    -Compiling fine, executing fine.  Not actually creating or modifying an existing output file.
+    -Still have to compile manually with MSYS2 (MinGW, g++).
