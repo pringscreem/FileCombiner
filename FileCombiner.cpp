@@ -52,8 +52,11 @@ void FileCombiner::Run(int argc, char** argv)
              //   std::cout << "Line " << count << " added to " << outputFilename << std::endl;
              //   count++;
              //}
+
+
+             //This is copying the line four times ( ./FileCombine combine OutputFile.cpp Game.h Game.cpp TestGame.cpp ).
              std::string checkFileName;
-             for(int i = 2; i < argc; i++)
+             for(int i = 3; i < argc; i++)
              {
                  checkFileName = argv[i];
                  if(outputString.find("#include \"" + checkFileName + "\"") == std::string::npos)
