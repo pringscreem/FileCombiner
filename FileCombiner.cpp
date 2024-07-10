@@ -55,7 +55,9 @@ void FileCombiner::Run(int argc, char** argv)
 
 
              //This is copying the line four times ( ./FileCombine combine OutputFile.cpp Game.h Game.cpp TestGame.cpp ).
+             //Down to three times.
              std::string checkFileName;
+
              for(int i = 3; i < argc; i++)
              {
                  checkFileName = argv[i];
