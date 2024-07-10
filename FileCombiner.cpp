@@ -52,9 +52,10 @@ void FileCombiner::Run(int argc, char** argv)
              //   std::cout << "Line " << count << " added to " << outputFilename << std::endl;
              //   count++;
              //}
-             //std::string checkFileName;
-             for(const std::string  checkFileName : argv)
+             std::string checkFileName;
+             for(int i = 2; i < argc; i++)
              {
+                 checkFileName = argv[i];
                  if(outputString.find("#include \"" + checkFileName + "\"") == std::string::npos)
                  {
                      outputFile << outputString << '\n';
