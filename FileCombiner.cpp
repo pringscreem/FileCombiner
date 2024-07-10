@@ -43,14 +43,15 @@ void FileCombiner::Run(int argc, char** argv)
              std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
              std::cout << "inputFileName: " << inputFileName << std::endl;
              //Variables for the while-loop
-             std::string checkFileName(argv[i]);
+             std::string checkFileName;
              bool skipLineFlag = false;
         //Go through the file line by line
          while(std::getline(inputFile, outputString))
          {
              //Check Each line for every filename
-             for(int i = 3; i < argc; i++)
+             for(int j = 3; j < argc; j++)
              {
+                 checkFileName = argv[j];
                  //If there is a match, trip the flag
                  if(outputString.find("#include \"" + checkFileName + "\"") == std::string::npos)
                  {
