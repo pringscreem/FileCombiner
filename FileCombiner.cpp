@@ -33,48 +33,61 @@ void FileCombiner::Run(int argc, char** argv)
                                                          //(this will make a file if it doesn't exist, whereas append mode will not).
     for(int i = 3; i < argc; i++) //The first three arguments are the path, the command, and the output file.
     {
-         std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
+        //Open the desired file
          std::ifstream inputFile;
          std::string inputFileName(argv[i]);
-         std::cout << "inputFileName: " << inputFileName << std::endl;
          inputFile.open(inputFileName);
          std::string outputString;
          int count = 0;
+             //Console output statements to illustrate what is happening
+             std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
+             std::cout << "inputFileName: " << inputFileName << std::endl;
+             //Variables for the while-loop
+             std::string checkFileName(argv[i]);
+             bool skipLineFlag = false;
+        //Go through the file line by line
          while(std::getline(inputFile, outputString))
          {
-             //if(outputString.find( "#include \"" + inputFileName + "\"") == std::string::npos)
-             //{
-             //    continue;
-             //}
-             //else
-             //{
-             //   outputFile << outputString << '\n';
-             //   std::cout << "Line " << count << " added to " << outputFilename << std::endl;
-             //   count++;
-             //}
-
-
-             //This is copying the line four times ( ./FileCombine combine OutputFile.cpp Game.h Game.cpp TestGame.cpp ).
-             //Down to three times.
-             std::string checkFileName;
-
+             //Check Each line for every filename
              for(int i = 3; i < argc; i++)
              {
-                 checkFileName = argv[i];
+                 //If there is a match, trip the flag
                  if(outputString.find("#include \"" + checkFileName + "\"") == std::string::npos)
                  {
-                     outputFile << outputString << '\n';
-                     std::cout << "Line " << count << " added to " << outputFilename << std::endl;
-                     count++;
+                     skipLineFlag = true;
                  }
-                 else
-                 {
-                     std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
-                     count++;
-                 }
+             }
+             //If the flag has been tripped, skip the line
+             if(skipLineFlag)
+             {
+                 //skip the line
+                 continue;
+             }
+             //Otherwise, copy the line
+             else
+             {
+                 outputFile << outputString << '\n';
+                 std::cout << "Line " << count << " added to " << outputFilename << std::endl;
+                 count++;
              }
          }
          inputFile.close();
     }
     outputFile.close();
 }
+
+
+
+
+                 //checkFileName = argv[i];
+                 //if(outputString.find("#include \"" + checkFileName + "\"") == std::string::npos)
+                 //{
+                 //    outputFile << outputString << '\n';
+                 //    std::cout << "Line " << count << " added to " << outputFilename << std::endl;
+                 //    count++;
+                 //}
+                 //else
+                 //{
+                 //    std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
+                 //    count++;
+                 //}
