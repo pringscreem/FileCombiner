@@ -50,12 +50,12 @@ void FileCombiner::Run(int argc, char** argv)
          {
              //Reset the flag
              skipLineFlag = false;
-             //Check Each line for every filename
+             //Check the current line for every filename
              for(int j = 3; j < argc; j++)
              {
                  checkFileName = argv[j];
                  //If there is a match, trip the flag
-                 if(outputString.find("#include \"" + checkFileName + "\"") == std::string::npos)
+                 if(outputString.find("#include \"" + checkFileName + "\"") != std::string::npos)
                  {
                      skipLineFlag = true;
                  }

@@ -50,4 +50,10 @@ July 9, 2024
      copying the line three times before moving on to the next line.
 
 July 10, 2024
-    -Continue
+    -Rewrote the nested loops for copying the files.  Changed the erroneous structure to the 
+     correct structure.
+    -There was still a bug using std::string::npos.  It was treating the result as the opposite 
+     of what we were looking for, i.e. what should have indicated a match was indicating no match 
+     and vice versa.
+    -std::string::npos in this context is used as a return value to show that there were no matches.
+     Paraphrasing https://cplusplus.com/reference/string/string/npos/ .
