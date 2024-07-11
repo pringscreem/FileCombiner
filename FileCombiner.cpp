@@ -38,7 +38,7 @@ void FileCombiner::Run(int argc, char** argv)
          std::string inputFileName(argv[i]);
          inputFile.open(inputFileName);
          std::string outputString;
-         int count = 0;
+         int count = 1;
              //Console output statements to illustrate what is happening
              std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
              std::cout << "inputFileName: " << inputFileName << std::endl;
@@ -48,6 +48,8 @@ void FileCombiner::Run(int argc, char** argv)
         //Go through the file line by line
          while(std::getline(inputFile, outputString))
          {
+             //Reset the flag
+             skipLineFlag = false;
              //Check Each line for every filename
              for(int j = 3; j < argc; j++)
              {
@@ -61,7 +63,9 @@ void FileCombiner::Run(int argc, char** argv)
              //If the flag has been tripped, skip the line
              if(skipLineFlag)
              {
-                 //skip the line
+                 //Skip the line
+                 std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
+                 count++;
                  continue;
              }
              //Otherwise, copy the line
