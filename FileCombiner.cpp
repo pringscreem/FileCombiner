@@ -22,7 +22,7 @@ void FileCombiner::Help()
 
 
 //Probably working, returning an error on this computer (not using makefiles or CMake yet).
-void FileCombiner::Run(int argc, char** argv)
+void FileCombiner::Combine()
 {
     std::ofstream outputFile;
     std::string outputFilename(argv[2]);//= static_cast<std::string>(argv[2]) + ".cpp"; //argv[2] should be the output name (second argument given)
@@ -81,18 +81,14 @@ void FileCombiner::Run(int argc, char** argv)
     outputFile.close();
 }
 
-
-
-
-                 //checkFileName = argv[i];
-                 //if(outputString.find("#include \"" + checkFileName + "\"") == std::string::npos)
-                 //{
-                 //    outputFile << outputString << '\n';
-                 //    std::cout << "Line " << count << " added to " << outputFilename << std::endl;
-                 //    count++;
-                 //}
-                 //else
-                 //{
-                 //    std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
-                 //    count++;
-                 //}
+void FileCombiner::Run()
+{
+    if(argv[1] == "help")
+    {
+        Help();
+    }
+    else if(argv[i] == "combine")
+    {
+        Combine();
+    }
+}

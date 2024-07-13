@@ -5,8 +5,9 @@ class FileCombiner
 {
     public:
         FileCombiner(int argcIn, char** argvIn);
-        void Run(int argc, char** argv);
+        void Combine(); //I don't think we need to pass any variables to Combine because they are passed/copied in the constructor.
         void Help();
+        void Run();
 
     private:
         int argc = 0;
