@@ -91,4 +91,10 @@ void FileCombiner::Run()
     {
         Combine();
     }
+    else
+    {
+        std::cout << "Command not recognized.  "
+                  << "Use \"help\" to see instructions"
+                  << "or \"combine\" to combine files.\n";
+    }
 }

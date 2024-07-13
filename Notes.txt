@@ -57,3 +57,9 @@ July 10, 2024
      and vice versa.
     -std::string::npos in this context is used as a return value to show that there were no matches.
      Paraphrasing https://cplusplus.com/reference/string/string/npos/ .
+
+July 12, 2024
+    -Renamed Run() to Combine() and added a Run() function that checks for "help" or "combine" 
+     in argv[1].
+    -Removed function parameters from Combine() (formerly Run()).
+    -It is compiling and working properly (OutputFile compiles and runs), after typo fix ("argv[i]").
