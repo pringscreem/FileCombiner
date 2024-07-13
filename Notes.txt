@@ -63,3 +63,5 @@ July 12, 2024
      in argv[1].
     -Removed function parameters from Combine() (formerly Run()).
     -It is compiling and working properly (OutputFile compiles and runs), after typo fix ("argv[i]").
+    -There is a type mismatch between argv[1] and the strings it is compared to for "help" and "combine".
+    -argv[1] is probably a C-Style String (i.e. a pointer to a char array).
