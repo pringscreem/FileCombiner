@@ -96,5 +96,10 @@ void FileCombiner::Run()
         std::cout << "Command not recognized.  "
                   << "Use \"help\" to see instructions"
                   << "or \"combine\" to combine files.\n";
+
+        for(int i = 0; i < argc; i++)
+        {
+            std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
+        }
     }
 }
