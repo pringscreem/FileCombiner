@@ -87,7 +87,7 @@ void FileCombiner::Run()
     {
         Help();
     }
-    else if(argv[i] == "combine")
+    else if(argv[1] == "combine")
     {
         Combine();
     }
