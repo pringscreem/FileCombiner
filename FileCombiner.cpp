@@ -123,8 +123,8 @@ void FileCombiner::Run()
     {
         std::cout << "Command not recognized.  "
                   << "Use \"help\" to see instructions "
-                  << "or \"combine\" or \"simplecombine\" "
-                  << "to combine files.\n";
+                  << "or \"combine\", \"simplecombine\" "
+                  << "or \"commentcombine\" to combine files.\n";
 
         for(int i = 0; i < argc; i++)
         {
