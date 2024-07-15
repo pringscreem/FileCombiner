@@ -84,14 +84,15 @@ void FileCombiner::Combine()
 
 void FileCombiner::Run()
 {
+    PrintArgv();
     //std::string helpStr = "help";
     //if(argv[1] == helpStr.c_str())
-    if(strcmp(argv[1], "help"))
+    if(!strcmp(argv[1], "help"))
     {
         Help();
         std::cout << "Line 92\n";
     }
-    else if(strcmp(argv[1], "combine"))
+    else if(!strcmp(argv[1], "combine"))
     {
         //std::string combineStr = "combine";
         //if(argv[1] == combineStr.c_str())
@@ -110,5 +111,13 @@ void FileCombiner::Run()
         {
             std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
         }
+    }
+}
+
+void FileCombiner::PrintArgv()
+{
+    for(int i = 0; i < argc; i++)
+    {
+        std::cout << "argv[" << i << "]: " << argv[i] << "\n";
     }
 }

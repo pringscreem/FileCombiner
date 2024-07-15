@@ -8,6 +8,7 @@ class FileCombiner
         void Combine(); //I don't think we need to pass any variables to Combine because they are passed/copied in the constructor.
         void Help();
         void Run();
+        void PrintArgv();
 
     private:
         int argc = 0;
