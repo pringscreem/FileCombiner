@@ -18,7 +18,7 @@ void Game::RunGuessingGame()
 
     while(!isCorrectGuess)
     {
-        std::cout << "Enter your guess between" << myMin << " and " << myMax << ": ";
+        std::cout << "Enter your guess between " << myMin << " and " << myMax << ": ";
         std::cin >> guess;
         if(guess == randomNumber)
         {
