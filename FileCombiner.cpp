@@ -1,6 +1,7 @@
 #include "FileCombiner.h"
 #include <iostream>
 #include <fstream>
+#include <cstring>
 
 FileCombiner::FileCombiner(int argcIn, char** argvIn)
 {
@@ -83,23 +84,28 @@ void FileCombiner::Combine()
 
 void FileCombiner::Run()
 {
-    if(argv[1] == "help")
+    std::string helpStr = "help";
+    if(argv[1] == helpStr.c_str())
     {
         Help();
     }
-    else if(argv[1] == "combine")
-    {
-        Combine();
-    }
     else
     {
-        std::cout << "Command not recognized.  "
-                  << "Use \"help\" to see instructions "
-                  << "or \"combine\" to combine files.\n";
-
-        for(int i = 0; i < argc; i++)
+        std::string combineStr = "combine";
+        if(argv[1] == combineStr.c_str())
         {
-            std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
+            Combine();
+        }
+        else
+        {
+            std::cout << "Command not recognized.  "
+                      << "Use \"help\" to see instructions "
+                      << "or \"combine\" to combine files.\n";
+
+            for(int i = 0; i < argc; i++)
+            {
+                std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
+            }
         }
     }
 }
