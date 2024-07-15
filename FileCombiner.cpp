@@ -101,11 +101,21 @@ void FileCombiner::Run()
             std::cout << "Line 100\n";
         }
     }
+    else if(!strcmp(argv[1], "simplecombine"))
+    {
+        //std::string combineStr = "combine";
+        //if(argv[1] == combineStr.c_str())
+        {
+            SimpleCombine();
+            std::cout << "Line 110\n";
+        }
+    }
     else
     {
         std::cout << "Command not recognized.  "
                   << "Use \"help\" to see instructions "
-                  << "or \"combine\" to combine files.\n";
+                  << "or \"combine\" or \"simplecombine\" "
+                  << "to combine files.\n";
 
         for(int i = 0; i < argc; i++)
         {
@@ -120,4 +130,40 @@ void FileCombiner::PrintArgv()
     {
         std::cout << "argv[" << i << "]: " << argv[i] << "\n";
     }
+}
+
+void FileCombiner::SimpleCombine()
+{
+    std::ofstream outputFile;
+    std::string outputFilename(argv[2]);//= static_cast<std::string>(argv[2]) + ".cpp"; //argv[2] should be the output name (second argument given)
+                                 //static_cast can't call constructors, and converting from a C-Style String to a STD::String is done with a constructor.
+    std::cout << "The outputFilename is " << outputFilename << std::endl;
+    outputFile.open(outputFilename, std::ios_base::out); //Open the string held in outputFilename ("argv[2].cpp") in append mode ("std::ios_base::app")
+                                                         //We might want the regular output mode, std::ios_base::out 
+                                                         //(this will make a file if it doesn't exist, whereas append mode will not).
+    for(int i = 3; i < argc; i++) //The first three arguments are the path, the command, and the output file.
+    {
+        //Open the desired file
+        std::ifstream inputFile;
+        std::string inputFileName(argv[i]);
+        inputFile.open(inputFileName);
+        std::string outputString;
+        int count = 1;
+            //Console output statements to illustrate what is happening
+        std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
+        std::cout << "inputFileName: " << inputFileName << std::endl;
+        //Variables for the while-loop
+        std::string checkFileName;
+        bool skipLineFlag = false;
+   //Go through the file line by line
+        while(std::getline(inputFile, outputString))
+        {
+                //Copy the line
+                outputFile << outputString << '\n';
+                std::cout << "Line " << count << " added to " << outputFilename << std::endl;
+                count++;   
+        }
+        inputFile.close();
+    }
+    outputFile.close();
 }

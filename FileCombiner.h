@@ -9,6 +9,7 @@ class FileCombiner
         void Help();
         void Run();
         void PrintArgv();
+        void SimpleCombine();
 
     private:
         int argc = 0;
