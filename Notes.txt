@@ -70,3 +70,7 @@ July 14, 2024
     -strcmp() seems to be the best way to check for command line arguments that can be used as commands.
     -strcmp() returns zero if the strings are identical, which is usually "false".  It returns a 
      non-zero value when the strings don't match.
+    -It was relatively easy to add different version of the combine function by copy/pasting and 
+     modifying the function.
+    -Copy/pasting the combine function means that there is repeated code, which violates "Don't 
+     Repeat Yourself" (DRY).
