@@ -84,28 +84,31 @@ void FileCombiner::Combine()
 
 void FileCombiner::Run()
 {
-    std::string helpStr = "help";
-    if(argv[1] == helpStr.c_str())
+    //std::string helpStr = "help";
+    //if(argv[1] == helpStr.c_str())
+    if(strcmp(argv[1], "help"))
     {
         Help();
+        std::cout << "Line 92\n";
+    }
+    else if(strcmp(argv[1], "combine"))
+    {
+        //std::string combineStr = "combine";
+        //if(argv[1] == combineStr.c_str())
+        {
+            Combine();
+            std::cout << "Line 100\n";
+        }
     }
     else
     {
-        std::string combineStr = "combine";
-        if(argv[1] == combineStr.c_str())
-        {
-            Combine();
-        }
-        else
-        {
-            std::cout << "Command not recognized.  "
-                      << "Use \"help\" to see instructions "
-                      << "or \"combine\" to combine files.\n";
+        std::cout << "Command not recognized.  "
+                  << "Use \"help\" to see instructions "
+                  << "or \"combine\" to combine files.\n";
 
-            for(int i = 0; i < argc; i++)
-            {
-                std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
-            }
+        for(int i = 0; i < argc; i++)
+        {
+            std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
         }
     }
 }
