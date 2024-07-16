@@ -74,3 +74,6 @@ July 14, 2024
      modifying the function.
     -Copy/pasting the combine function means that there is repeated code, which violates "Don't 
      Repeat Yourself" (DRY).
+
+July 15, 2024
+    -Continue
