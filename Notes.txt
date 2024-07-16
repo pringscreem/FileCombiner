@@ -88,3 +88,4 @@ July 15, 2024
     -ChatGPT disagrees (-1, 0, or 1 return for less than, equal to, or greater than).
     -cppreference says the same thing, on closer reading (only returning the sign of the 
      subtraction result).
+    -Created a redesign of the Combine function (could be improved with function pointers).
