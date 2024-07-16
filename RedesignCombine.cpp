@@ -1,0 +1,43 @@
+void FileCombiner::Combine(std::string outputMode)
+{
+	//Do the copy loop (while-loop)
+	while()
+	{
+
+		//Check for the output mode //We could do this with a switch statement.[Use if-else, see below.]
+		if()
+		{
+			//output mode 1
+			//The output mode functions will need the getline string (modify and return).
+		}
+		else if()
+		{
+			//output mode 2
+		}
+		//It would be nice if we could assign the helper function outside the loop and just 
+		//call it inside the loop, instead of checking all the parameters on every iteration
+		//of the loop.
+		//	^This would probably require a function pointer, so that we could assign it 
+		//	 outside of the loop.
+	}
+}
+
+//Switch Statement:
+//	Add a new output mode
+//	Assign the command line argument to the string parameter of the Combine function
+//	Assign a number to the new argument
+//	Add the number to the switch statement
+//	Create the new output mode function
+// 
+//	*Switch statements can have cascading effects on execution (everything past a number)
+//	 ^A break statement is included to prevent the cascade (which is why it didn't cause more 
+//	  problems in the past).
+
+//If-Else Statement:
+//  Add a new output mode
+//	Assign the command line argument to the string parameter of the Combine function
+//	Add the string to the if-else chain
+//	Create the new output mode function
+//
+//	*Using if-else statements requires fewer modifications to add a new output mode in the 
+//	 future
