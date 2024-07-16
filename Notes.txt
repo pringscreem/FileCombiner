@@ -85,3 +85,6 @@ July 15, 2024
      is part of Microsoft's labeling system (they call it "annotation")).
     -It probably is doing a "characterwise" subtraction, because it can be used to order strings 
      alphabetically, which means it can compare character values.
+    -ChatGPT disagrees (-1, 0, or 1 return for less than, equal to, or greater than).
+    -cppreference says the same thing, on closer reading (only returning the sign of the 
+     subtraction result).
