@@ -76,4 +76,12 @@ July 14, 2024
      Repeat Yourself" (DRY).
 
 July 15, 2024
-    -Continue
+    -strcmp() is probably subtracting one string value from the other under the hood (hence the
+     zero return value).  Actual: compares character by character until a difference is found, 
+     doing bitwise comparison of each character.  It's possible the bitwise comparison is a 
+     subtraction.  I might be able to check this by reading the strcmp() source code.
+    -When you look at the source code that Visual Studio is using for C++, it is in the Windows 
+     folders, which makes it clear that it is showing the Microsoft implementation ("_Check_return_" 
+     is part of Microsoft's labeling system (they call it "annotation")).
+    -It probably is doing a "characterwise" subtraction, because it can be used to order strings 
+     alphabetically, which means it can compare character values.
