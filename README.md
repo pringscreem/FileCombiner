@@ -8,6 +8,8 @@ Current Use:
 	line arguments that are used to determine the way the files are combined and 
 	which files are combined, as well as the name of combined file output.
 
+	There are currently some test files provided: Game.h, Game.cpp, and TestGame.cpp
+
 		Use Example:
 		./FileCombine combine myCombinedFile game.h game.cpp main.cpp
 
