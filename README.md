@@ -1,7 +1,7 @@
 Objective:
 	This project is intended to provide a C++ program which can be used to
 	combine multiple C++ files into a single file.
-
+//Some of the formatting in this README needs to be fixed.
 
 Current Use:
 	The program is used from the command line, by executing the file with command 
