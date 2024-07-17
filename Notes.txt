@@ -89,3 +89,6 @@ July 15, 2024
     -cppreference says the same thing, on closer reading (only returning the sign of the 
      subtraction result).
     -Created a redesign of the Combine function (could be improved with function pointers).
+
+July 16, 2024
+    -Continue
