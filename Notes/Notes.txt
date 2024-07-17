@@ -92,3 +92,6 @@ July 15, 2024
 
 July 16, 2024
     -Added issues.  Some of these will lead to future tasks (e.g. finding test suite options).
+    -Added README file.
+    -Moved files into folders, deleted some of the old output files.
+    -Added Review Document Notes for recording worthwhile observations and notes for future work.

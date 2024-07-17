@@ -3,6 +3,12 @@ Objective:
 	combine multiple C++ files into a single file.
 //Some of the formatting in this README needs to be fixed.
 
+Disclaimer:
+	This project has been used as a learning exercise as well as a potential tool for 
+	integration into future projects.  As such, the use of generative AI has been restricted 
+	to question and answer, rather than outright code generation.  Specifically, for 
+	syntax review and reminders, and general knowledge questions.
+
 Current Use:
 	The program is used from the command line, by executing the file with command 
 	line arguments that are used to determine the way the files are combined and 
