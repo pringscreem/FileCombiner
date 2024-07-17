@@ -16,10 +16,11 @@ void CommentCombineHelper()
 //Summary of current version
 void Combine()
 {
-	//Open files
+	//Open Output File
 
 	for(/*Files to combine*/)
 	{
+		//Open Input File
 		while(/*getline through the current file*/)
 		{
 			for(/*Files being combined*/)
