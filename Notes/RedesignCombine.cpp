@@ -1,3 +1,25 @@
+//Function Pointers Redesign
+
+void CommentCombineHelper()
+{
+	//Check for the filenames
+
+	//If they are found, write them to the file with a comment at the beginning.
+
+	//It looks like we have to open and close the file inside the helper function.
+	//We can pass the string we are checking with getline/outputString (variable 
+	//set by getline)
+
+	//Read the function to check if this will work.
+}
+
+
+
+
+
+
+
+//If-Else Version
 void FileCombiner::Combine(std::string outputMode)
 {
 	//Do the copy loop (while-loop)

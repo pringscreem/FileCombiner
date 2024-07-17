@@ -95,3 +95,5 @@ July 16, 2024
     -Added README file.
     -Moved files into folders, deleted some of the old output files.
     -Added Review Document Notes for recording worthwhile observations and notes for future work.
+    -Put a disclaimer about AI in the README.
+    -It looks like I have to write a destructor in order to use a function pointer.
