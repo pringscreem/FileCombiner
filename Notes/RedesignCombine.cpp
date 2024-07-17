@@ -30,7 +30,7 @@ void Combine()
 			}
 			if(/*Skip line flag is tripped*/)
 			{
-				//Skip the line
+				//Skip the line		//We could call the helper function here.
 			}
 			else
 			{
