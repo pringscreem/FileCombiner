@@ -31,6 +31,12 @@ void Combine()
 			if(/*Skip line flag is tripped*/)
 			{
 				//Skip the line		//We could call the helper function here.
+									//The price is that we call a dummy function if
+									//the simple combine is selected.
+									//This would mean we just wasted our time checking 
+									//for the include statement in each line.
+									//It would be better to call the helper function 
+									//before it checks every line for the include statements.
 			}
 			else
 			{
