@@ -13,6 +13,35 @@ void CommentCombineHelper()
 	//Read the function to check if this will work.
 }
 
+//Summary of current version
+void Combine()
+{
+	//Open files
+
+	for(/*Files to combine*/)
+	{
+		while(/*getline through the current file*/)
+		{
+			for(/*Files being combined*/)
+			{
+				//Check for include statement with filename
+				//Trip the skip line flag if it is found
+			}
+			if(/*Skip line flag is tripped*/)
+			{
+				//Skip the line
+			}
+			else
+			{
+				//Copy the line
+			}
+		}
+		//Close Input File (looping through them)
+	}
+
+	//Close Output File
+}
+
 
 
 
