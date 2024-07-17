@@ -2,6 +2,7 @@ Objective:
 	This project is intended to provide a C++ program which can be used to
 	combine multiple C++ files into a single file.
 
+
 Current Use:
 	The program is used from the command line, by executing the file with command 
 	line arguments that are used to determine the way the files are combined and 
@@ -23,7 +24,16 @@ Current Use:
 			simplecombine - This does not remove any include statements.
 			commentcombine - This comments out the include statements instead of removing
 							 them.
+		
+		Current Compilation Commands:
+			g++ -o FileCombiner FileCombiner.cpp TestFileCombiner.cpp
 
+			./FileCombiner.cpp combine OutputFile.cpp Game.h Game.cpp TestGame.cpp
+
+			g++ -o OutputFile OutputFile.cpp
+
+			./OutputFile
+	
 
 Current Functionality:
 	See above examples.
