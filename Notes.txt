@@ -91,4 +91,4 @@ July 15, 2024
     -Created a redesign of the Combine function (could be improved with function pointers).
 
 July 16, 2024
-    -Continue
+    -Added issues.  Some of these will lead to future tasks (e.g. finding test suite options).
