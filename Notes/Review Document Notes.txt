@@ -1,0 +1,3 @@
+***** C++ uses order that variables are declared in the class declaration as the order of 
+***** initialization, even if the initialization list in the constructor uses a different 
+***** order.
