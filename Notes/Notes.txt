@@ -98,3 +98,6 @@ July 16, 2024
     -Put a disclaimer about AI in the README.
     -It looks like I have to write a destructor in order to use a function pointer.
     -The algorithm is probably wildly inefficient, but it doesn't matter for its' purposes here.
+
+July 17, 2024
+    -Continue
