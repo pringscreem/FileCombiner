@@ -7,17 +7,21 @@ Game::Game(int min, int max)
     gen(rd()),
     distribution(min, max),
     myMin(min),
-    myMax(max)
+    myMax(max),
+    randomNumber(distribution(gen)) 
 {
+    std::cout << min << std::endl;
+    std::cout << max << std::endl;
 }
 
 void Game::RunGuessingGame()
 {
     bool isCorrectGuess = false;
     int guess = 0;
-
+    std::cout << "The random number is " << randomNumber << "\n";
     while(!isCorrectGuess)
     {
+        std::cout << "The random number is " << randomNumber << "\n";
         std::cout << "Enter your guess between " << myMin << " and " << myMax << ": ";
         std::cin >> guess;
         if(guess == randomNumber)

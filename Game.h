@@ -8,8 +8,8 @@ class Game
     private:
         int myMin;
         int myMax;
-        int randomNumber = 0;
         std::random_device rd;
         std::mt19937 gen;
         std::uniform_int_distribution<> distribution;
+        int randomNumber;
 };

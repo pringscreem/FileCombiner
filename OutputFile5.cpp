@@ -21,7 +21,8 @@ Game::Game(int min, int max)
     gen(rd()),
     distribution(min, max),
     myMin(min),
-    myMax(max)
+    myMax(max),
+    randomNumber(distribution(gen)) 
 {
 }
 

@@ -100,4 +100,9 @@ July 16, 2024
     -The algorithm is probably wildly inefficient, but it doesn't matter for its' purposes here.
 
 July 17, 2024
-    -Continue
+    -Fixed random number generation in the number guessing game.  The issue was that the random 
+     number was first not being initialized (I must have left it as a task for later) and then 
+     that it was being initialized before the variables that it depended on for randomization.
+     This was happening because C++ uses the declaration order of the variables in the class 
+     declaration, even if the order in the initialization list (in the constructor) is different.
+     Moving the randomNumber variable below the random number generation variables fixed this.
