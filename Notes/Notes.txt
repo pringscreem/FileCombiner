@@ -106,3 +106,5 @@ July 17, 2024
      This was happening because C++ uses the declaration order of the variables in the class 
      declaration, even if the order in the initialization list (in the constructor) is different.
      Moving the randomNumber variable below the random number generation variables fixed this.
+    -Added to Review Notes.
+    -The function pointer redesign will probably be easier to think through on paper first.
