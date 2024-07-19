@@ -108,3 +108,6 @@ July 17, 2024
      Moving the randomNumber variable below the random number generation variables fixed this.
     -Added to Review Notes.
     -The function pointer redesign will probably be easier to think through on paper first.
+
+July 18, 2024
+    -Continue
