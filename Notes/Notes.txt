@@ -110,4 +110,5 @@ July 17, 2024
     -The function pointer redesign will probably be easier to think through on paper first.
 
 July 25, 2024
-    -Continue
+    -Just use a dummy function for "simplecombine".  This eliminates the greatest amount of 
+     repeated code.
