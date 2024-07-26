@@ -77,6 +77,7 @@ void FileCombiner::Combine()
              //Reset the flag
              skipLineFlag = false;
              //Check the current line for every filename
+             //if(argv[1] != 'simplecombine')
              for(int j = 3; j < argc; j++)
              {
                  checkFileName = argv[j];

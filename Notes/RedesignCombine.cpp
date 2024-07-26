@@ -55,6 +55,8 @@ void Combine()
 
 
 
+
+
 //If-Else Version
 void FileCombiner::Combine(std::string outputMode)
 {
