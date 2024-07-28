@@ -14,10 +14,10 @@ void callFuncPtr(void (*fPtr)());
 
 int main(int argc, char* argv[])
 {
-	void (*myFuncPtr)() = &myFunction;
+	void (*myFuncPtr)() = &myFunction; //The syntax for declaring function pointers is weird
 
 	std::cout << "Before calling myFuncPtr\n";
-	myFuncPtr();
+	myFuncPtr(); //The pointer has to be called with the same syntax as a function.
 	std::cout << "After calling myFuncPtr\n";
 
 	std::cout << "Before calling callFuncPtr\n";
