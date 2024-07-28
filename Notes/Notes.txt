@@ -112,3 +112,7 @@ July 17, 2024
 July 25, 2024
     -Just use a dummy function for "simplecombine".  This eliminates the greatest amount of 
      repeated code.
+
+July 27, 2024
+    -Function pointer syntax demo complete: the parentheses after the name (like a regular 
+     function call) are important to remember (used like a function, not a pointer).
