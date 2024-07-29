@@ -83,7 +83,7 @@ July 15, 2024
     -When you look at the source code that Visual Studio is using for C++, it is in the Windows 
      folders, which makes it clear that it is showing the Microsoft implementation ("_Check_return_" 
      is part of Microsoft's labeling system (they call it "annotation")).
-    -It probably is doing a "characterwise" subtraction, because it can be used to order strings 
+    -It is probably doing a "characterwise" subtraction, because it can be used to order strings 
      alphabetically, which means it can compare character values.
     -ChatGPT disagrees (-1, 0, or 1 return for less than, equal to, or greater than).
     -cppreference says the same thing, on closer reading (only returning the sign of the 
