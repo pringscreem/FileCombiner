@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 	std::cout << "After calling myFuncPtr\n";
 
 	std::cout << "Before calling callFuncPtr\n";
-	callFuncPtr(myFuncPtr());
+	callFuncPtr(myFuncPtr); //Here we don't add the parentheses because we are passing it as a pointer parameter, not accessing it as a function.
 	std::cout << "After calling callFuncPtr\n";
 
 	return 0;

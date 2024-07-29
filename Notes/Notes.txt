@@ -118,4 +118,7 @@ July 27, 2024
      function call) are important to remember (used like a function, not a pointer).
 
 July 28, 2024
-    -Continue
+    -The function pointer syntax has another wrinkle: it doesn't get the function parentheses if 
+     you are passing it as a parameter (i.e. treating it as a pointer, not accessing it as a 
+     function).
+    -
