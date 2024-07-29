@@ -34,7 +34,7 @@ void myFunction()
 
 void callFuncPtr(void (*fPtr)())
 {
-	fPtr;
+	fPtr();
 }
 
 

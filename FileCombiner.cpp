@@ -167,98 +167,98 @@ void FileCombiner::PrintArgv()
     }
 }
 
-void FileCombiner::SimpleCombine()
-{
-    std::ofstream outputFile;
-    std::string outputFilename(argv[2]);//= static_cast<std::string>(argv[2]) + ".cpp"; //argv[2] should be the output name (second argument given)
-                                 //static_cast can't call constructors, and converting from a C-Style String to a STD::String is done with a constructor.
-    std::cout << "The outputFilename is " << outputFilename << std::endl;
-    outputFile.open(outputFilename, std::ios_base::out); //Open the string held in outputFilename ("argv[2].cpp") in append mode ("std::ios_base::app")
-                                                         //We might want the regular output mode, std::ios_base::out 
-                                                         //(this will make a file if it doesn't exist, whereas append mode will not).
-    for(int i = 3; i < argc; i++) //The first three arguments are the path, the command, and the output file.
-    {
-        //Open the desired file
-        std::ifstream inputFile;
-        std::string inputFileName(argv[i]);
-        inputFile.open(inputFileName);
-        std::string outputString;
-        int count = 1;
-            //Console output statements to illustrate what is happening
-        std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
-        std::cout << "inputFileName: " << inputFileName << std::endl;
-        //Variables for the while-loop
-        std::string checkFileName;
-        bool skipLineFlag = false;
-   //Go through the file line by line
-        while(std::getline(inputFile, outputString))
-        {
-                //Copy the line
-                outputFile << outputString << '\n';
-                std::cout << "Line " << count << " added to " << outputFilename << std::endl;
-                count++;   
-        }
-        inputFile.close();
-    }
-    outputFile.close();
-}
+//void FileCombiner::SimpleCombine()
+//{
+//    std::ofstream outputFile;
+//    std::string outputFilename(argv[2]);//= static_cast<std::string>(argv[2]) + ".cpp"; //argv[2] should be the output name (second argument given)
+//                                 //static_cast can't call constructors, and converting from a C-Style String to a STD::String is done with a constructor.
+//    std::cout << "The outputFilename is " << outputFilename << std::endl;
+//    outputFile.open(outputFilename, std::ios_base::out); //Open the string held in outputFilename ("argv[2].cpp") in append mode ("std::ios_base::app")
+//                                                         //We might want the regular output mode, std::ios_base::out 
+//                                                         //(this will make a file if it doesn't exist, whereas append mode will not).
+//    for(int i = 3; i < argc; i++) //The first three arguments are the path, the command, and the output file.
+//    {
+//        //Open the desired file
+//        std::ifstream inputFile;
+//        std::string inputFileName(argv[i]);
+//        inputFile.open(inputFileName);
+//        std::string outputString;
+//        int count = 1;
+//            //Console output statements to illustrate what is happening
+//        std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
+//        std::cout << "inputFileName: " << inputFileName << std::endl;
+//        //Variables for the while-loop
+//        std::string checkFileName;
+//        bool skipLineFlag = false;
+//   //Go through the file line by line
+//        while(std::getline(inputFile, outputString))
+//        {
+//                //Copy the line
+//                outputFile << outputString << '\n';
+//                std::cout << "Line " << count << " added to " << outputFilename << std::endl;
+//                count++;   
+//        }
+//        inputFile.close();
+//    }
+//    outputFile.close();
+//}
 
-void FileCombiner::CommentCombine()
-{
-    std::ofstream outputFile;
-    std::string outputFilename(argv[2]);//= static_cast<std::string>(argv[2]) + ".cpp"; //argv[2] should be the output name (second argument given)
-                                 //static_cast can't call constructors, and converting from a C-Style String to a STD::String is done with a constructor.
-    std::cout << "The outputFilename is " << outputFilename << std::endl;
-    outputFile.open(outputFilename, std::ios_base::out); //Open the string held in outputFilename ("argv[2].cpp") in append mode ("std::ios_base::app")
-                                                         //We might want the regular output mode, std::ios_base::out 
-                                                         //(this will make a file if it doesn't exist, whereas append mode will not).
-    for(int i = 3; i < argc; i++) //The first three arguments are the path, the command, and the output file.
-    {
-        //Open the desired file
-        std::ifstream inputFile;
-        std::string inputFileName(argv[i]);
-        inputFile.open(inputFileName);
-        std::string outputString;
-        int count = 1;
-            //Console output statements to illustrate what is happening
-        std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
-        std::cout << "inputFileName: " << inputFileName << std::endl;
-        //Variables for the while-loop
-        std::string checkFileName;
-        bool skipLineFlag = false;
-   //Go through the file line by line
-        while(std::getline(inputFile, outputString))
-        {
-            //Reset the flag
-            skipLineFlag = false;
-            //Check the current line for every filename
-            for(int j = 3; j < argc; j++)
-            {
-                checkFileName = argv[j];
-                //If there is a match, trip the flag
-                if(outputString.find("#include \"" + checkFileName + "\"") != std::string::npos)
-                {
-                    skipLineFlag = true;
-                }
-            }
-            //If the flag has been tripped, skip the line //Comment out the line
-            if(skipLineFlag)
-            {
-                //SKip the line //Comment out the line
-                outputFile << "//" << outputString << '\n';
-                std::cout << "Line " << count << " COMMENTED OUT and added to " << outputFilename << std::endl;
-                count++;
-                continue;
-            }
-            //Otherwise, copy the line
-            else
-            {
-                outputFile << outputString << '\n';
-                std::cout << "Line " << count << " added to " << outputFilename << std::endl;
-                count++;
-            }
-        }
-        inputFile.close();
-    }
-    outputFile.close();
-}
+//void FileCombiner::CommentCombine()
+//{
+//    std::ofstream outputFile;
+//    std::string outputFilename(argv[2]);//= static_cast<std::string>(argv[2]) + ".cpp"; //argv[2] should be the output name (second argument given)
+//                                 //static_cast can't call constructors, and converting from a C-Style String to a STD::String is done with a constructor.
+//    std::cout << "The outputFilename is " << outputFilename << std::endl;
+//    outputFile.open(outputFilename, std::ios_base::out); //Open the string held in outputFilename ("argv[2].cpp") in append mode ("std::ios_base::app")
+//                                                         //We might want the regular output mode, std::ios_base::out 
+//                                                         //(this will make a file if it doesn't exist, whereas append mode will not).
+//    for(int i = 3; i < argc; i++) //The first three arguments are the path, the command, and the output file.
+//    {
+//        //Open the desired file
+//        std::ifstream inputFile;
+//        std::string inputFileName(argv[i]);
+//        inputFile.open(inputFileName);
+//        std::string outputString;
+//        int count = 1;
+//            //Console output statements to illustrate what is happening
+//        std::cout << "argv[" << i << "]: " << argv[i] << std::endl;
+//        std::cout << "inputFileName: " << inputFileName << std::endl;
+//        //Variables for the while-loop
+//        std::string checkFileName;
+//        bool skipLineFlag = false;
+//   //Go through the file line by line
+//        while(std::getline(inputFile, outputString))
+//        {
+//            //Reset the flag
+//            skipLineFlag = false;
+//            //Check the current line for every filename
+//            for(int j = 3; j < argc; j++)
+//            {
+//                checkFileName = argv[j];
+//                //If there is a match, trip the flag
+//                if(outputString.find("#include \"" + checkFileName + "\"") != std::string::npos)
+//                {
+//                    skipLineFlag = true;
+//                }
+//            }
+//            //If the flag has been tripped, skip the line //Comment out the line
+//            if(skipLineFlag)
+//            {
+//                //SKip the line //Comment out the line
+//                outputFile << "//" << outputString << '\n';
+//                std::cout << "Line " << count << " COMMENTED OUT and added to " << outputFilename << std::endl;
+//                count++;
+//                continue;
+//            }
+//            //Otherwise, copy the line
+//            else
+//            {
+//                outputFile << outputString << '\n';
+//                std::cout << "Line " << count << " added to " << outputFilename << std::endl;
+//                count++;
+//            }
+//        }
+//        inputFile.close();
+//    }
+//    outputFile.close();
+//}
