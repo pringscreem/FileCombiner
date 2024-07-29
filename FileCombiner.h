@@ -34,9 +34,10 @@ class FileCombiner
         void PrintArgv();
         //void SimpleCombine();
         //void CommentCombine();
+        void HelperCombine();
 
     private:
         int argc = 0;
         char** argv = nullptr;
-        void(*funcPtr)() = &combine;
+        void(*funcPtr)() = &HelperCombine;
 };

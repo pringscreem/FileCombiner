@@ -87,13 +87,15 @@ void FileCombiner::Combine()
                      skipLineFlag = true;
                  }
              }
-             //If the flag has been tripped, skip the line
+             //If the flag has been tripped, skip the line //Call the helper function
              if(skipLineFlag)
              {
-                 //Skip the line
-                 std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
+                 //Skip the line //Call the helper function
+                 //std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
+                 std::cout << "Line " << count << " called helper function on " << outputFilename << std::endl;
+                 funcPtr();
                  count++;
-                 continue;
+                 continue;//Something isn't right with the logic here.
              }
              //Otherwise, copy the line
              else
@@ -165,6 +167,11 @@ void FileCombiner::PrintArgv()
     {
         std::cout << "argv[" << i << "]: " << argv[i] << "\n";
     }
+}
+
+void FileCombiner::HelperCombine()
+{
+    //Line Check and Combine...
 }
 
 //void FileCombiner::SimpleCombine()
