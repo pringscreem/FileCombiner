@@ -125,8 +125,8 @@ void FileCombiner::Run()
         //std::string combineStr = "combine";
         //if(argv[1] == combineStr.c_str())
         {
+            funcPtr = &HelperCombine;
             Combine();
-            std::cout << "Line 100\n";
         }
     }
     else if(!strcmp(argv[1], "simplecombine"))
@@ -134,8 +134,8 @@ void FileCombiner::Run()
         //std::string combineStr = "combine";
         //if(argv[1] == combineStr.c_str())
         {
+            funcPtr = &HelperSimpleCombine;
             SimpleCombine();
-            std::cout << "Line 110\n";
         }
     }
     else if(!strcmp(argv[1], "commentcombine"))
@@ -143,8 +143,8 @@ void FileCombiner::Run()
         //std::string combineStr = "combine";
         //if(argv[1] == combineStr.c_str())
         {
+            funcPtr = &HelperCommentCombine;
             CommentCombine();
-            std::cout << "Line 110\n";
         }
     }
     else
@@ -171,7 +171,17 @@ void FileCombiner::PrintArgv()
 
 void FileCombiner::HelperCombine()
 {
-    //Line Check and Combine...
+    //Skip the line
+}
+
+void FileCombiner::HelperSimpleCombine()
+{
+    //Don't skip the line
+}
+
+void FileCombiner::HelperCommentCombine()
+{
+    //Comment out the line
 }
 
 //void FileCombiner::SimpleCombine()

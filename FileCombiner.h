@@ -35,6 +35,8 @@ class FileCombiner
         //void SimpleCombine();
         //void CommentCombine();
         void HelperCombine();
+        void HelperSimpleCombine();
+        void HelperCommentCombine();
 
     private:
         int argc = 0;
