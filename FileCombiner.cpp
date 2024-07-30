@@ -126,7 +126,7 @@ void FileCombiner::Run()
         //if(argv[1] == combineStr.c_str())
         {
             funcPtr = &HelperCombine;
-            //Combine();
+            Combine();
         }
     }
     else if(!strcmp(argv[1], "simplecombine"))
@@ -135,7 +135,7 @@ void FileCombiner::Run()
         //if(argv[1] == combineStr.c_str())
         {
             funcPtr = &HelperSimpleCombine;
-            //SimpleCombine();
+            Combine();
         }
     }
     else if(!strcmp(argv[1], "commentcombine"))
@@ -144,7 +144,7 @@ void FileCombiner::Run()
         //if(argv[1] == combineStr.c_str())
         {
             funcPtr = &HelperCommentCombine;
-            //CommentCombine();
+            Combine();
         }
     }
     else

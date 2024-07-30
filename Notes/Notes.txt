@@ -123,4 +123,5 @@ July 28, 2024
      function).
 
 July 29, 2024
-    -Continue
+    -Set up helper functions and started debugging function pointer syntax.
+    -It might be possible to rewrtie the Run() function so that it only calls Combine() once.

@@ -41,5 +41,5 @@ class FileCombiner
     private:
         int argc = 0;
         char** argv = nullptr;
-        void(*funcPtr)(std::ifstream, std::string) = nullptr;
+        void(*funcPtr)(std::ofstream, std::string); /*= &HelperCombine;*/ /*nullptr;*/
 };
