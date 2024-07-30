@@ -92,7 +92,7 @@ void FileCombiner::Combine()
              {
                  //Skip the line //Call the helper function
                  //std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
-                 std::cout << "Line " << count << " called helper function on " << inputFilename << std::endl;
+                 std::cout << "Line " << count << " called helper function on " << inputFileName << std::endl;
                  funcPtr(inputFile, outputString);
                  count++;
                  continue;//Something isn't right with the logic here.
