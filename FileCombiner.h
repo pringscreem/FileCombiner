@@ -34,9 +34,9 @@ class FileCombiner
         void PrintArgv();
         //void SimpleCombine();
         //void CommentCombine();
-        void HelperCombine(std::ifstream inputFile, std::string outputString);
-        void HelperSimpleCombine(std::ifstream inputFile, std::string outputString);
-        void HelperCommentCombine(std::ifstream inputFile, std::string outputString);
+        void HelperCombine(std::ofstream outputFile, std::string outputString);
+        void HelperSimpleCombine(std::ofstream outputFile, std::string outputString);
+        void HelperCommentCombine(std::ofstream outputFile, std::string outputString);
 
     private:
         int argc = 0;

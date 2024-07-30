@@ -93,7 +93,7 @@ void FileCombiner::Combine()
                  //Skip the line //Call the helper function
                  //std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
                  std::cout << "Line " << count << " called helper function on " << inputFileName << std::endl;
-                 funcPtr(inputFile, outputString);
+                 funcPtr(outputFile, outputString);
                  count++;
                  continue;//Something isn't right with the logic here.
              }
@@ -126,7 +126,7 @@ void FileCombiner::Run()
         //if(argv[1] == combineStr.c_str())
         {
             funcPtr = &HelperCombine;
-            Combine();
+            //Combine();
         }
     }
     else if(!strcmp(argv[1], "simplecombine"))
@@ -135,7 +135,7 @@ void FileCombiner::Run()
         //if(argv[1] == combineStr.c_str())
         {
             funcPtr = &HelperSimpleCombine;
-            SimpleCombine();
+            //SimpleCombine();
         }
     }
     else if(!strcmp(argv[1], "commentcombine"))
@@ -144,7 +144,7 @@ void FileCombiner::Run()
         //if(argv[1] == combineStr.c_str())
         {
             funcPtr = &HelperCommentCombine;
-            CommentCombine();
+            //CommentCombine();
         }
     }
     else
@@ -169,21 +169,21 @@ void FileCombiner::PrintArgv()
     }
 }
 
-void FileCombiner::HelperCombine(std::ifstream inputFile, std::string outputString)
+void FileCombiner::HelperCombine(std::ofstream outputFile, std::string outputString)
 {
     //Skip the line //Do nothing...?
 }
 
-void FileCombiner::HelperSimpleCombine(std::ifstream inputFile, std::string outputString)
+void FileCombiner::HelperSimpleCombine(std::ofstream outputFile, std::string outputString)
 {
     //Don't skip the line //Add the line
-    inputFile << outputString;
+    outputFile << outputString;
 }
 
-void FileCombiner::HelperCommentCombine(std::ifstream inputFile, std::string outputString)
+void FileCombiner::HelperCommentCombine(std::ofstream outputFile, std::string outputString)
 {
     //Comment out the line //Add the line with the comment symbol at the beginning
-    inputFile << "//" << outputString;
+    outputFile << "//" << outputString;
 }
 
 //void FileCombiner::SimpleCombine()
