@@ -92,8 +92,8 @@ void FileCombiner::Combine()
              {
                  //Skip the line //Call the helper function
                  //std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
-                 std::cout << "Line " << count << " called helper function on " << outputFilename << std::endl;
-                 funcPtr();
+                 std::cout << "Line " << count << " called helper function on " << inputFilename << std::endl;
+                 funcPtr(inputFile, outputString);
                  count++;
                  continue;//Something isn't right with the logic here.
              }
@@ -169,17 +169,17 @@ void FileCombiner::PrintArgv()
     }
 }
 
-void FileCombiner::HelperCombine()
+void FileCombiner::HelperCombine(std::ifstream inputFile, std::string outputString)
 {
     //Skip the line
 }
 
-void FileCombiner::HelperSimpleCombine()
+void FileCombiner::HelperSimpleCombine(std::ifstream inputFile, std::string outputString)
 {
     //Don't skip the line
 }
 
-void FileCombiner::HelperCommentCombine()
+void FileCombiner::HelperCommentCombine(std::ifstream inputFile, std::string outputString)
 {
     //Comment out the line
 }
