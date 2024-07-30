@@ -177,11 +177,13 @@ void FileCombiner::HelperCombine(std::ifstream inputFile, std::string outputStri
 void FileCombiner::HelperSimpleCombine(std::ifstream inputFile, std::string outputString)
 {
     //Don't skip the line //Add the line
+    inputFile << outputString;
 }
 
 void FileCombiner::HelperCommentCombine(std::ifstream inputFile, std::string outputString)
 {
     //Comment out the line //Add the line with the comment symbol at the beginning
+    inputFile << "//" << outputString;
 }
 
 //void FileCombiner::SimpleCombine()
