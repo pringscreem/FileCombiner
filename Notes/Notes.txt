@@ -121,4 +121,6 @@ July 28, 2024
     -The function pointer syntax has another wrinkle: it doesn't get the function parentheses if 
      you are passing it as a parameter (i.e. treating it as a pointer, not accessing it as a 
      function).
-    -
+
+July 29, 2024
+    -Continue
