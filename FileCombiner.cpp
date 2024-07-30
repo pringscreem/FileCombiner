@@ -171,17 +171,17 @@ void FileCombiner::PrintArgv()
 
 void FileCombiner::HelperCombine(std::ifstream inputFile, std::string outputString)
 {
-    //Skip the line
+    //Skip the line //Do nothing...?
 }
 
 void FileCombiner::HelperSimpleCombine(std::ifstream inputFile, std::string outputString)
 {
-    //Don't skip the line
+    //Don't skip the line //Add the line
 }
 
 void FileCombiner::HelperCommentCombine(std::ifstream inputFile, std::string outputString)
 {
-    //Comment out the line
+    //Comment out the line //Add the line with the comment symbol at the beginning
 }
 
 //void FileCombiner::SimpleCombine()
