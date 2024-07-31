@@ -97,7 +97,7 @@ void FileCombiner::Combine()
                  //Skip the line //Call the helper function
                  //std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
                  std::cout << "Line " << count << " called helper function on " << inputFileName << std::endl;
-                 funcPtr(outputFile, outputString);
+                 this->*funcPtr(outputFile, outputString);//(*this).
                  count++;
                  continue;//Something isn't right with the logic here.
              }
@@ -129,7 +129,7 @@ void FileCombiner::Run()
         //std::string combineStr = "combine";
         //if(argv[1] == combineStr.c_str())
         {
-            funcPtr = &HelperCombine;
+            (*this).funcPtr = &FileCombiner::HelperCombine;
             Combine();
         }
     }
@@ -138,7 +138,7 @@ void FileCombiner::Run()
         //std::string combineStr = "combine";
         //if(argv[1] == combineStr.c_str())
         {
-            funcPtr = &HelperSimpleCombine;
+            (*this).funcPtr = &FileCombiner::HelperSimpleCombine;
             Combine();
         }
     }
@@ -147,7 +147,7 @@ void FileCombiner::Run()
         //std::string combineStr = "combine";
         //if(argv[1] == combineStr.c_str())
         {
-            funcPtr = &HelperCommentCombine;
+            (*this).funcPtr = &FileCombiner::HelperCommentCombine;
             Combine();
         }
     }
