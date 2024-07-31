@@ -30,12 +30,13 @@
 
 FileCombiner::FileCombiner(int argcIn, char** argvIn)
     : argc(argcIn), //There are a lot of choices that seem fine for initializer list styles.
-      argv(argvIn), 
-      funcPtr(nullptr)
+      argv(argvIn),
+      funcPtr(&FileCombiner::HelperCombine)
 {
     //Use an initializer list instead
     //argc = argcIn;
     //argv = argvIn;
+    //(*this).funcPtr = &FileCombiner::HelperCombine;
 }
 
 void FileCombiner::Help()
@@ -97,7 +98,7 @@ void FileCombiner::Combine()
                  //Skip the line //Call the helper function
                  //std::cout << "Line " << count << " NOT added to " << outputFilename << std::endl;
                  std::cout << "Line " << count << " called helper function on " << inputFileName << std::endl;
-                 this->*funcPtr(outputFile, outputString);//(*this).
+                 ((*this).*funcPtr)(outputFile, outputString); //(this->*funcPtr)(outputFile, outputString);
                  count++;
                  continue;//Something isn't right with the logic here.
              }
@@ -129,7 +130,7 @@ void FileCombiner::Run()
         //std::string combineStr = "combine";
         //if(argv[1] == combineStr.c_str())
         {
-            (*this).funcPtr = &FileCombiner::HelperCombine;
+            funcPtr = &FileCombiner::HelperCombine;
             Combine();
         }
     }
@@ -138,7 +139,7 @@ void FileCombiner::Run()
         //std::string combineStr = "combine";
         //if(argv[1] == combineStr.c_str())
         {
-            (*this).funcPtr = &FileCombiner::HelperSimpleCombine;
+            funcPtr = &FileCombiner::HelperSimpleCombine;
             Combine();
         }
     }
@@ -147,7 +148,7 @@ void FileCombiner::Run()
         //std::string combineStr = "combine";
         //if(argv[1] == combineStr.c_str())
         {
-            (*this).funcPtr = &FileCombiner::HelperCommentCombine;
+            funcPtr = &FileCombiner::HelperCommentCombine;
             Combine();
         }
     }
@@ -173,18 +174,18 @@ void FileCombiner::PrintArgv()
     }
 }
 
-void FileCombiner::HelperCombine(std::ofstream outputFile, std::string outputString)
+void FileCombiner::HelperCombine(std::ofstream& outputFile, std::string& outputString)
 {
     //Skip the line //Do nothing...?
 }
 
-void FileCombiner::HelperSimpleCombine(std::ofstream outputFile, std::string outputString)
+void FileCombiner::HelperSimpleCombine(std::ofstream& outputFile, std::string& outputString)
 {
     //Don't skip the line //Add the line
     outputFile << outputString;
 }
 
-void FileCombiner::HelperCommentCombine(std::ofstream outputFile, std::string outputString)
+void FileCombiner::HelperCommentCombine(std::ofstream& outputFile, std::string& outputString)
 {
     //Comment out the line //Add the line with the comment symbol at the beginning
     outputFile << "//" << outputString;

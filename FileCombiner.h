@@ -34,12 +34,12 @@ class FileCombiner
         void PrintArgv();
         //void SimpleCombine();
         //void CommentCombine();
-        void HelperCombine(std::ofstream outputFile, std::string outputString);
-        void HelperSimpleCombine(std::ofstream outputFile, std::string outputString);
-        void HelperCommentCombine(std::ofstream outputFile, std::string outputString);
+        void HelperCombine(std::ofstream& outputFile, std::string& outputString);
+        void HelperSimpleCombine(std::ofstream& outputFile, std::string& outputString);
+        void HelperCommentCombine(std::ofstream& outputFile, std::string& outputString);
 
     private:
         int argc = 0;
         char** argv = nullptr;
-        void(FileCombiner::*funcPtr)(std::ofstream, std::string); /*= &HelperCombine;*/ /*nullptr;*/
+        void(FileCombiner::*funcPtr)(std::ofstream&, std::string&); /*= &HelperCombine;*/ /*nullptr;*/
 };
