@@ -29,9 +29,13 @@
 #include <cstring>
 
 FileCombiner::FileCombiner(int argcIn, char** argvIn)
+    : argc(argcIn), //There are a lot of choices that seem fine for initializer list styles.
+      argv(argvIn), 
+      funcPtr(nullptr)
 {
-    argc = argcIn;
-    argv = argvIn;
+    //Use an initializer list instead
+    //argc = argcIn;
+    //argv = argvIn;
 }
 
 void FileCombiner::Help()

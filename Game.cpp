@@ -2,8 +2,7 @@
 #include "Game.h"
 
 Game::Game(int min, int max)
-	:
-    rd(),
+  : rd(),
     gen(rd()),
     distribution(min, max),
     myMin(min),
